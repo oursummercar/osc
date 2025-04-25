@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSC Mod</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
+
+    /* === Loading Screen === */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.1);
+      border-top: 4px solid cyan;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* === Logo Spinner === */
+    .logo-spin {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      animation: slowSpin 15s linear infinite;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .logo-spin img {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 4px rgba(0, 255, 255, 0.3));
+    }
+
+    .logo-spin:hover {
+      animation: fastSpin 1s linear infinite;
+      transform: scale(1.1);
+    }
+
+    @keyframes slowSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes fastSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* === Buttons === */
+    .button-container {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .button {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      color: cyan;
+      padding: 12px 24px;
+      margin: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      background: rgba(0, 255, 255, 0.1);
+      transform: scale(1.05);
+    }
+
+    /* === Boxes === */
+    .box {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      width: 80%;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .small-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .small-box {
+      flex: 1 1 300px;
+      background: rgba(255, 255, 255, 0.025);
+      backdrop-filter: blur(8px);
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    /* === Footer Social Icons === */
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .social-icon {
+      width: 30px;
+      height: 30px;
+      fill: #444;
+      margin: 0 10px;
+      transition: fill 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-icon.discord:hover { fill: #5865F2; }
+    .social-icon.twitter:hover { fill: #1DA1F2; }
+    .social-icon.youtube:hover { fill: #ff0000; }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Page Content -->
+  <div id="content" style="display: none;" class="fade-in">
+
+    <!-- Logo -->
+    <div class="logo-spin">
+      <img src="logo.png" alt="Logo" />
+    </div>
+
+    <!-- Top Buttons -->
+    <div class="button-container">
+      <button class="button">Download</button>
+      <button class="button" onclick="window.location.href='/changelog'">Changelog</button>
+    </div>
+
+    <!-- Download Box -->
+    <div class="box">
+      <p>OSC is a modification for My summer car. It adds things like weed, strip clubs, 2 Satsumas</p>
+      <button class="button">⬇ Download OSC</button>
+    </div>
+
+    <!-- Info Boxes -->
+    <div class="box">
+      <div class="small-boxes">
+        <div class="small-box">
+          <h3>Development</h3>
+          <p>A project started by 4 people. It all began on April 2025</p>
+        </div>
+        <div class="small-box">
+          <h3>Goal</h3>
+          <p>To add more things into My summer car. Things like weed, strip clubs, 2 Satsumas</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer">
+      <a href="https://discord.com" target="_blank" title="Discord">
+        <svg class="social-icon discord" viewBox="0 0 24 24"><path d="M22.47 12.1c0-5.6-4.5-10.1-10.1-10.1-5.6 0-10.1 4.5-10.1 10.1 0 5.6 4.5 10.1 10.1 10.1 5.6 0 10.1-4.5 10.1-10.1z"/></svg>
+      </a>
+      <a href="https://twitter.com" target="_blank" title="X (Twitter)">
+        <svg class="social-icon twitter" viewBox="0 0 24 24"><path d="M22.46 2H17.1L12 8.92 6.9 2H1.54l6.99 9.45L1 22h5.46l5.53-7.2L17.54 22H23l-7.55-10.1L22.46 2z"/></svg>
+      </a>
+      <a href="https://youtube.com" target="_blank" title="YouTube">
+        <svg class="social-icon youtube" viewBox="0 0 24 24"><path d="M19.6 3.2H4.4C2.5 3.2 1 4.7 1 6.6v10.8c0 1.9 1.5 3.4 3.4 3.4h15.2c1.9 0 3.4-1.5 3.4-3.4V6.6c0-1.9-1.5-3.4-3.4-3.4zM9.6 15.7V8.3l6.4 3.7-6.4 3.7z"/></svg>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- JS -->
+  <script>
+    // Loader
+    window.onload = function () {
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }, 2000);
+    };
+  </script>
+</body>
+</html>
