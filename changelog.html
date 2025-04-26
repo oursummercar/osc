@@ -3,67 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Changelog - OSC Mod</title>
+  <title>OSC Changelogs</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', sans-serif;
       background-color: #0d0d0d;
       color: #e0e0e0;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease forwards;
     }
 
-    .button {
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 80px auto 40px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: cyan;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px rgba(0,255,255,0.4);
+    }
+
+    .changelog-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+      margin: 20px 0;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .changelog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.2);
+    }
+
+    .changelog-card h2 {
+      color: #0ff;
+      margin-bottom: 10px;
+    }
+
+    .changelog-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .changelog-card ul li::before {
+      content: "➤";
+      color: cyan;
+      margin-right: 8px;
+    }
+
+    .footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 20px;
       color: cyan;
-      padding: 12px 24px;
-      margin-top: 40px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
 
-    .button:hover {
+    a.button:hover {
       background: rgba(0, 255, 255, 0.1);
       transform: scale(1.05);
-    }
-
-    h1 {
-      color: cyan;
-    }
-
-    .changelog-entry {
-      margin: 10px 0;
-      padding: 8px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
 </head>
 <body>
 
-  <h1>Changelog</h1>
+  <div class="container">
+    <h1>Changelogs</h1>
 
-  <!-- Changelog Entries -->
-  <div class="changelog-entry">
-    <h2>Version 1.0.0</h2>
-    <ul>
-      <li>Initial release</li>
-      <li>Beta testing began</li>
-    </ul>
+    <div class="changelog-card">
+      <h2>v1.0.0 - Initial Release</h2>
+      <ul>
+        <li>Added weed system</li>
+        <li>Added strip clubs</li>
+        <li>Added second Satsuma</li>
+      </ul>
+    </div>
+
+    <a href="https://oursummercar.github.io/osc" class="button">⬅ Back to Home</a>
   </div>
 
-  <button class="button" onclick="window.location.href='/'">Back to Home</button>
+  <div class="footer">
+    &copy; 2025 Our Summer Car
+  </div>
 
 </body>
 </html>
