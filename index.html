@@ -14,7 +14,6 @@
       overflow-x: hidden;
     }
 
-    /* === Loading Screen === */
     #loader {
       position: fixed;
       top: 0; left: 0;
@@ -50,7 +49,6 @@
       to { opacity: 1; }
     }
 
-    /* === Logo Spinner === */
     .logo-spin {
       position: absolute;
       top: 20px;
@@ -83,7 +81,6 @@
       to { transform: rotate(360deg); }
     }
 
-    /* === Buttons === */
     .button-container {
       text-align: center;
       margin-top: 100px;
@@ -136,7 +133,6 @@
       border: 1px solid rgba(255, 255, 255, 0.07);
     }
 
-    /* === Footer Social Icons === */
     .footer {
       margin-top: 60px;
       text-align: center;
@@ -158,32 +154,26 @@
 </head>
 <body>
 
-  <!-- Loading -->
   <div id="loader">
     <div class="spinner"></div>
   </div>
 
-  <!-- Page Content -->
   <div id="content" style="display: none;" class="fade-in">
 
-    <!-- Logo -->
     <div class="logo-spin">
       <img src="logo.png" alt="Logo" />
     </div>
 
-    <!-- Top Buttons -->
     <div class="button-container">
       <button class="button">Download</button>
-      <button class="button" onclick="window.location.href='/changelog'">Changelog</button>
+      <a href="/osc/changelog" class="button">Changelogs</a>
     </div>
 
-    <!-- Download Box -->
     <div class="box">
       <p>OSC is a modification for My summer car. It adds things like weed, strip clubs, 2 Satsumas</p>
       <button class="button">⬇ Download OSC</button>
     </div>
 
-    <!-- Info Boxes -->
     <div class="box">
       <div class="small-boxes">
         <div class="small-box">
@@ -197,7 +187,6 @@
       </div>
     </div>
 
-    <!-- Social Media Icons -->
     <div class="footer">
       <a href="https://discord.com" target="_blank" title="Discord">
         <svg class="social-icon discord" viewBox="0 0 24 24"><path d="M22.47 12.1c0-5.6-4.5-10.1-10.1-10.1-5.6 0-10.1 4.5-10.1 10.1 0 5.6 4.5 10.1 10.1 10.1 5.6 0 10.1-4.5 10.1-10.1z"/></svg>
@@ -212,9 +201,7 @@
 
   </div>
 
-  <!-- JS -->
   <script>
-    // Loader
     window.onload = function () {
       setTimeout(() => {
         document.getElementById("loader").style.display = "none";
