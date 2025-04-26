@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OSC Mod</title>
+  <title>Our Summer Car</title>
   <style>
     body {
       margin: 0;
@@ -81,10 +81,47 @@
       to { transform: rotate(360deg); }
     }
 
+    /* === Buttons === */
     .button-container {
       text-align: center;
       margin-top: 100px;
     }
+
+.box {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+}
+
+.small-box {
+  flex: 1 1 300px;
+  background: rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.small-box:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.25);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
 
     .button {
       background: rgba(255, 255, 255, 0.05);
@@ -104,7 +141,6 @@
       transform: scale(1.05);
     }
 
-    /* === Boxes === */
     .box {
       background: rgba(255, 255, 255, 0.03);
       backdrop-filter: blur(10px);
@@ -166,7 +202,7 @@
 
     <div class="button-container">
       <button class="button">Download</button>
-      <a href="/osc/changelog" class="button">Changelogs</a>
+      <a href="https://oursummercar.github.io/osc/changelog" class="button">Changelogs</a>
     </div>
 
     <div class="box">
@@ -188,13 +224,13 @@
     </div>
 
     <div class="footer">
-      <a href="https://discord.com" target="_blank" title="Discord">
+      <a href="https://discord.gg/zXcMw986CP" target="_blank" title="Discord">
         <svg class="social-icon discord" viewBox="0 0 24 24"><path d="M22.47 12.1c0-5.6-4.5-10.1-10.1-10.1-5.6 0-10.1 4.5-10.1 10.1 0 5.6 4.5 10.1 10.1 10.1 5.6 0 10.1-4.5 10.1-10.1z"/></svg>
       </a>
-      <a href="https://twitter.com" target="_blank" title="X (Twitter)">
+      <a href="https://x.com/Oursummercar" target="_blank" title="X">
         <svg class="social-icon twitter" viewBox="0 0 24 24"><path d="M22.46 2H17.1L12 8.92 6.9 2H1.54l6.99 9.45L1 22h5.46l5.53-7.2L17.54 22H23l-7.55-10.1L22.46 2z"/></svg>
       </a>
-      <a href="https://youtube.com" target="_blank" title="YouTube">
+      <a href="https://www.youtube.com/@Oursummercar" target="_blank" title="YouTube">
         <svg class="social-icon youtube" viewBox="0 0 24 24"><path d="M19.6 3.2H4.4C2.5 3.2 1 4.7 1 6.6v10.8c0 1.9 1.5 3.4 3.4 3.4h15.2c1.9 0 3.4-1.5 3.4-3.4V6.6c0-1.9-1.5-3.4-3.4-3.4zM9.6 15.7V8.3l6.4 3.7-6.4 3.7z"/></svg>
       </a>
     </div>
