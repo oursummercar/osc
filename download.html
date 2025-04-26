@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Download OSC</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: #e0e0e0;
+      animation: fadeIn 1s ease forwards;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 100px auto 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .download-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      border-radius: 20px;
+      padding: 40px 20px;
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .download-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 48px;
+      color: cyan;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px rgba(0,255,255,0.4);
+    }
+
+    p {
+      font-size: 18px;
+      color: #bbb;
+      margin-bottom: 30px;
+    }
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(0, 255, 255, 0.15);
+      border: 1px solid rgba(0, 255, 255, 0.4);
+      padding: 14px 28px;
+      border-radius: 30px;
+      color: cyan;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .download-button:hover {
+      background: rgba(0, 255, 255, 0.25);
+      transform: scale(1.05);
+    }
+
+    .download-button svg {
+      margin-right: 10px;
+      width: 24px;
+      height: 24px;
+      fill: cyan;
+    }
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="download-box">
+      <h1>Our Summer Car - Download</h1>
+      <p>Download the latest version of OSC!</p>
+      <a class="download-button" href="https://yoursite.com/osc_download.zip" download>
+        <svg viewBox="0 0 24 24">
+          <path d="M5 20h14v-2H5v2zm7-18l-7 7h4v6h6v-6h4l-7-7z"/>
+        </svg>
+        Download OSC
+      </a>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Our Summer Car
+  </div>
+
+</body>
+</html>
